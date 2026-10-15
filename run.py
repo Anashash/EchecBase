@@ -4,7 +4,7 @@ import sys
 
 # Sans console (pythonw), stdout/stderr n'existent pas : on écrit dans data/echecbase.log.
 if sys.stdout is None or sys.stderr is None:
-    _here = os.path.dirname(os.path.abspath(__file__))
+    _here = os.path.dirname(sys.executable if getattr(sys, "frozen", False) else os.path.abspath(__file__))
     os.makedirs(os.path.join(_here, "data"), exist_ok=True)
     _log = open(os.path.join(_here, "data", "echecbase.log"), "w", encoding="utf-8", buffering=1)
     sys.stdout = sys.stderr = _log

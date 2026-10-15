@@ -3,9 +3,15 @@
 Outil personnel pour étudier ses ouvertures : import des parties Chess.com, analyse Stockfish,
 positions problématiques, répertoire guidé (Stockfish + explorateur Lichess) et entraînement.
 
-## Installation
+## Installation (Windows, sans Python)
 
-Stockfish n'est pas inclus dans le dépôt : télécharger la version Windows (x86-64) sur
+Télécharger `EchecBase-<version>-windows.zip` dans les
+[Releases](https://github.com/Anashash/EchecBase/releases), le décompresser et lancer `EchecBase.exe`.
+Stockfish est inclus. Les données sont créées dans `data/`, à côté de l'exe.
+
+## Installation depuis le code source
+
+Il faut Python 3. Stockfish n'est pas inclus dans le dépôt : télécharger la version Windows (x86-64) sur
 [stockfishchess.org](https://stockfishchess.org/download/) et la décompresser à la racine, dans
 `stockfish-windows-x86-64-universal/` (ou indiquer un autre chemin dans Réglages).
 
@@ -19,6 +25,13 @@ Autres options :
 ```
 .venv\Scripts\python run.py --browser    # dans le navigateur au lieu d'une fenêtre
 .venv\Scripts\python run.py --no-sync    # sans synchronisation au démarrage
+```
+
+Construire l'exe (dossier `dist/EchecBase/` et zip) :
+
+```
+.venv\Scripts\python -m pip install pyinstaller
+.venv\Scripts\python build_exe.py 0.1.1
 ```
 
 ## Profils

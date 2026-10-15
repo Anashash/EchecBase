@@ -5,16 +5,19 @@ Réglages du joueur (pseudo, import) : data/profiles/<id>/profile.json, un dossi
 """
 import json
 import os
+import sys
 import threading
 import time
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Exécutable autonome (PyInstaller) : données et Stockfish à côté de l'exe, interface dans le paquet
+FROZEN = getattr(sys, "frozen", False)
+ROOT = os.path.dirname(sys.executable) if FROZEN else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_PATH = os.path.join(ROOT, "config.json")
 DATA_DIR = os.path.join(ROOT, "data")
 PROFILES_DIR = os.path.join(DATA_DIR, "profiles")
 STATE_PATH = os.path.join(DATA_DIR, "profiles.json")  # {"active": "<id>"}
 DB_NAME = "echecbase.db"
-STATIC_DIR = os.path.join(ROOT, "static")
+STATIC_DIR = os.path.join(sys._MEIPASS if FROZEN else ROOT, "static")
 
 _cpu = os.cpu_count() or 4
 

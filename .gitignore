@@ -7,6 +7,10 @@ __pycache__/
 data/
 config.json
 
+# Exécutable construit par build_exe.py
+build/
+dist/
+
 # Stockfish (à télécharger, voir README)
 stockfish-windows-x86-64-universal/
 *.zip
