@@ -1,0 +1,21 @@
+# Environnement Python
+.venv/
+__pycache__/
+*.pyc
+
+# Données personnelles : parties, analyses, réglages (jeton Lichess)
+data/
+config.json
+
+# Stockfish (à télécharger, voir README)
+stockfish-windows-x86-64-universal/
+*.zip
+
+# Formation : cours en préparation, gardés en local
+app/courses.py
+app/courses/
+static/js/pages/formation.js
+tools/
+
+# Réglages locaux de Claude Code
+.claude/settings.local.json

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EchecBase</title>
+  <link rel="stylesheet" href="/static/vendor/chessground.base.css">
+  <link rel="stylesheet" href="/static/vendor/chessground.cburnett.css">
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a2.5 2.5 0 0 1 1.6 4.42c1.2.6 2 1.85 2 3.28 0 .63-.16 1.22-.44 1.73H16v2h-1.35l1.1 5.07H17v2.5H7V18.5h1.25l1.1-5.07H8v-2h.84a3.6 3.6 0 0 1-.44-1.73c0-1.43.82-2.68 2-3.28A2.5 2.5 0 0 1 12 2Z"/></svg>
+      <span>EchecBase</span>
+    </div>
+    <nav id="nav">
+      <a href="#/" data-route="dashboard"><span class="ico">◧</span>Tableau de bord</a>
+      <a href="#/games" data-route="games"><span class="ico">≡</span>Parties</a>
+      <a href="#/problems" data-route="problems"><span class="ico">⚑</span>Points faibles</a>
+      <a href="#/repertoire/white" data-route="repertoire"><span class="ico">⌥</span>Répertoire</a>
+      <a href="#/training" data-route="training"><span class="ico">↻</span>Entraînement</a>
+      <a href="#/settings" data-route="settings"><span class="ico">⚙</span>Réglages</a>
+    </nav>
+    <div class="sync-box" id="syncBox">
+      <button class="btn btn-primary w100" id="syncBtn">Synchroniser</button>
+      <div class="sync-status" id="syncStatus"></div>
+      <div class="progress" id="syncProgress" hidden><div></div></div>
+    </div>
+    <div class="profile-box" id="profileBox"></div>
+  </aside>
+  <main id="view"></main>
+  <div id="toast" class="toast" hidden></div>
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
